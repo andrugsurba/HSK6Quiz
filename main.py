@@ -1,7 +1,6 @@
 import random
 import sys
-import csv
-from hskcsv import hskdict
+from hskdict import hskdict
 
 
 print ("Hanyu Shuiping Kaoshi Level 6 (Advanced Chinese) \n")
