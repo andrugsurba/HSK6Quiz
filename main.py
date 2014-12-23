@@ -17,7 +17,7 @@ def main():
 
     count = 0   
 
-    for key in (hskdict):
+    for key in (hskdict): 
         while num_questions > count:
             if num_questions > 0 and num_questions <= 100:
                 multiple_choices = random.sample(hskdict,3)
