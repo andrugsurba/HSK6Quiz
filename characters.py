@@ -27,7 +27,7 @@ def main():
                 #Assigned variables to key indexes
                 
                 print current_question
-                print "\n(a)%s   (b)%s   (c)%s" %tuple(multiple_choices)
+                print "\n \t (a)%s   (b)%s   (c)%s \n" %tuple(multiple_choices)
                 #Formats the multiple choices with "a","b", and "c"
 
                 user_answer=raw_input("Type your answer: \n" )
@@ -42,7 +42,7 @@ def main():
 
                         else:
                             print ("Wrong. \n")
-                            print "The answer is",correct_answer+".\n"
+                            print "\tThe answer is",correct_answer+".\n"
                             wrong_answers.append(current_question)
                             missed_questions = True
 
@@ -55,7 +55,7 @@ def main():
                             
                         else:
                             print ("Wrong. \n")
-                            print "The answer is",correct_answer+".\n"
+                            print "\tThe answer is",correct_answer+".\n"
                             wrong_answers.append(current_question)
                             missed_questions = True
 
@@ -68,13 +68,13 @@ def main():
 
                         else:
                             print ("Wrong. \n")
-                            print "The answer is",correct_answer+".\n"
+                            print "\tThe answer is",correct_answer+".\n"
                             wrong_answers.append(current_question)
                             missed_questions = True
 
                 else:
-                    print ("Wrong. \n")
-                    print "The answer is",correct_answer+".\n"
+                    print ("\tWrong. \n")
+                    print "\tThe answer is",correct_answer+".\n"
                     wrong_answers.append(current_question)
                     missed_questions = True
 
@@ -93,14 +93,14 @@ def main():
         def quiz_result():
             total_score= (len(right_answers)/num_questions)*100
             
-            print "You scored",len(right_answers),"right out of",num_questions,"questions. Your grade is", "{0:.0f}%.".format(float(total_score))
+            print "\tYou scored",len(right_answers),"right out of",num_questions,"questions. Your grade is", "{0:.0f}%.".format(float(total_score))
 
             if total_score >=60:
-                print "You passed this test. \n"
+                print "\tYou passed this test. \n"
                 if total_score == 100:
-                    print "You aced it! Congratulations. \n"
+                    print "\tYou aced it! Congratulations. \n"
             else:
-                print "You failed this test.\n"
+                print "\tYou failed this test.\n"
                 
         if num_questions >= 1:
             quiz_result()
@@ -118,7 +118,7 @@ def main():
             review = raw_input("Would you like to review the words you missed? Press \"y\" for yes or \"n\" for no. \n")
             if review == "y" or review == "Y":
                 for wrong in wrong_answers:
-                    print "*"+(wrong)+"\n"
+                    print "\t*"+(wrong)+"\n"
             else:
                     restart()
                     
