@@ -97,7 +97,7 @@ def main():
                 print "Your score is",str(len(right_answers))+".\n"
                 count = count + 1
 
-            elif num_questions>100:
+            else:
                 num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
         
         def quiz_result():
