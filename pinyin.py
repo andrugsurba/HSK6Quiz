@@ -2,7 +2,9 @@ import random
 import sys
 from hskdict import hskdict
 
-def main(): 
+num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
+
+def main():
 
     wrong_answers=[]
     right_answers=[]
@@ -10,9 +12,7 @@ def main():
     missed_questions = False
     scored_points = False
 
-    num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
-
-    count = 0   
+    count = 0
 
     for key in (hskdict):
         while num_questions > count:
@@ -32,62 +32,52 @@ def main():
 
                 user_answer=raw_input("Type your answer: \n" )
 
+                def guessed_right():
+                    print ("Right! \n")
+                    right_answers.append(current_question)
+                    scored_points = True
 
-                if a == correct_answer:
-                        if (user_answer== "a") or (user_answer == "A"):
-                            print ("Right! \n")
-                            right_answers.append(current_question)
-                            scored_points = True
-                            del hskdict[a]
-                            #If "a" is right, it prints "Right" and appends this to the right_answers list. Deletes from map so it does not repeat question.
-
-                        else:
-                            print ("Wrong. \n")
-                            print "\tThe answer is",correct_answer+".\n"
-                            wrong_answers.append(current_question)
-                            missed_questions = True
-                            del hskdict[a]
-
-                elif b == correct_answer:
-                        if (user_answer== "b") or (user_answer == "B"):
-                            print ("Right! \n")
-                            right_answers.append(current_question)
-                            scored_points = True
-                            del hskdict[b]
-                            #If "b" is right, it prints "Right" and appends this to the right_answers list. Deletes from map so it does not repeat question.
-                            
-                        else:
-                            print ("Wrong. \n")
-                            print "\tThe answer is",correct_answer+".\n"
-                            wrong_answers.append(current_question)
-                            missed_questions = True
-                            del hskdict[b]
-
-                elif  c == correct_answer:
-                        if (user_answer== "c") or (user_answer == "C"):
-                            print ("Right! \n")
-                            right_answers.append(current_question)
-                            scored_points = True
-                            del hskdict[c]
-                            #If "c" is right, it prints "Right" and appends this to the right_answers list. Deletes from map so it does not repeat question.
-
-                        else:
-                            print ("Wrong. \n")
-                            print "\tThe answer is",correct_answer+".\n"
-                            wrong_answers.append(current_question)
-                            missed_questions = True
-                            del hskdict[c]
-
-                else:
-                    print ("\tWrong. \n")
+                def guessed_wrong():
+                    print ("Wrong. \n")
                     print "\tThe answer is",correct_answer+".\n"
                     wrong_answers.append(current_question)
                     missed_questions = True
 
-               
+
+                if a == correct_answer:
+                        if (user_answer== "a") or (user_answer == "A"):
+                            guessed_right()
+                            #If "a" is right, it prints "Right" and appends this to the right_answers list. 
+
+                        else:
+                            guessed_wrong()
+                            
+
+                elif b == correct_answer:
+                        if (user_answer== "b") or (user_answer == "B"):
+                            guessed_right()
+                            #If "b" is right, it prints "Right" and appends this to the right_answers list. 
+                            
+                        else:
+                            guessed_wrong()
+                            
+
+                elif  c == correct_answer:
+                        if (user_answer== "c") or (user_answer == "C"):
+                            guessed_right()
+                            #If "c" is right, it prints "Right" and appends this to the right_answers list. 
+
+                        else:
+                            guessed_wrong()
+
+
+                else:
+                    guessed_wrong()
+                    missed_questions = True
 
                 print "Your score is",str(len(right_answers))+".\n"
                 count = count + 1
+                
 
             elif num_questions == "0":
                 print "Goodbye!"
