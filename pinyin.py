@@ -10,7 +10,18 @@ def main():
     missed_questions = False
     scored_points = False
 
-    num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
+    def exit_program():
+        print "Goodbye!"
+        sys.exit()
+        #Exits program
+
+    try:
+        num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
+        if num_questions == 0:
+            exit_program()
+    except ValueError:
+        print "Please enter a valid number."
+        num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
 
     count = 0   
 
@@ -81,19 +92,13 @@ def main():
                     print ("\tWrong. \n")
                     print "\tThe answer is",correct_answer+".\n"
                     wrong_answers.append(current_question)
-                    missed_questions = True
-
-               
+                    missed_questions = True       
 
                 print "Your score is",str(len(right_answers))+".\n"
                 count = count + 1
 
-            elif num_questions == "0":
-                print "Goodbye!"
-                sys.exit()
-
-            else:
-                print num_questions
+            elif num_questions>100:
+                num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
         
         def quiz_result():
             total_score= (len(right_answers)/float(num_questions))*100
@@ -116,8 +121,7 @@ def main():
                 if restart == "y" or restart == "Y":
                     main()
                 else:
-                    print "Goodbye!"
-                    sys.exit()
+                    exit_program()
                     
         if wrong_answers:       
             review = raw_input("Would you like to review the words you missed? Press \"y\" for yes or \"n\" for no. \n")
