@@ -26,7 +26,7 @@ def main():
                 a, b, c = multiple_choices[0], multiple_choices[1], multiple_choices[2]
                 #Assigned variables to key indexes
                 
-                print current_question
+                print ">" +current_question
                 print "\n \t (a)%s   (b)%s   (c)%s \n" %tuple(multiple_choices)
                 #Formats the multiple choices with "a","b", and "c"
 
