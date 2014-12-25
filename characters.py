@@ -38,39 +38,45 @@ def main():
                             print ("Right! \n")
                             right_answers.append(current_question)
                             scored_points = True
-                            #If "a" is right, it prints "Right" and appends this to the right_answers list
+                            del hskdict[a]
+                            #If "a" is right, it prints "Right" and appends this to the right_answers list. Deletes from map so it does not repeat question.
 
                         else:
                             print ("Wrong. \n")
                             print "\tThe answer is",correct_answer+".\n"
                             wrong_answers.append(current_question)
                             missed_questions = True
+                            del hskdict[a]
 
                 elif b == correct_answer:
                         if (user_answer== "b") or (user_answer == "B"):
                             print ("Right! \n")
                             right_answers.append(current_question)
                             scored_points = True
-                            #If "b" is right, it prints "Right" and appends this to the right_answers list
+                            del hskdict[b]
+                            #If "b" is right, it prints "Right" and appends this to the right_answers list. Deletes from map so it does not repeat question.
                             
                         else:
                             print ("Wrong. \n")
                             print "\tThe answer is",correct_answer+".\n"
                             wrong_answers.append(current_question)
                             missed_questions = True
+                            del hskdict[b]
 
                 elif  c == correct_answer:
                         if (user_answer== "c") or (user_answer == "C"):
                             print ("Right! \n")
                             right_answers.append(current_question)
                             scored_points = True
-                            #If "c" is right, it prints "Right" and appends this to the right_answers list
+                            del hskdict[c]
+                            #If "c" is right, it prints "Right" and appends this to the right_answers list. Deletes from map so it does not repeat question.
 
                         else:
                             print ("Wrong. \n")
                             print "\tThe answer is",correct_answer+".\n"
                             wrong_answers.append(current_question)
                             missed_questions = True
+                            del hskdict[c]
 
                 else:
                     print ("\tWrong. \n")
