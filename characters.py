@@ -73,7 +73,6 @@ def main():
 
                 else:
                     guessed_wrong()
-                    missed_questions = True
 
                 print "Your score is",str(len(right_answers))+".\n"
                 count = count + 1
