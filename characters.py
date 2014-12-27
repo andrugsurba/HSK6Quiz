@@ -23,21 +23,27 @@ def main():
         print "Please enter a valid number."
         num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
 
-    count = 0   
+    count=0
+    i=1
 
     for key in (hskdict):
         while num_questions > count:
-            if num_questions > 0 and num_questions <= 100:
+            if num_questions <= 100:
                 multiple_choices = random.sample(hskdict,3)
                 #This displays the number of multiple choices
                 correct_answer=random.choice(multiple_choices)
                 #Selects correct answer
+
                 current_question= hskdict[correct_answer]
                 #Current question
+                print "%d )" %i, current_question
+                i+=1
+                #Incrementing "i" so that the question number can display an increase next to the word chosen
+                
                 a, b, c = multiple_choices[0], multiple_choices[1], multiple_choices[2]
                 #Assigned variables to key indexes
                 
-                print "*" +current_question
+                
                 print "\n \t (a)%s   (b)%s   (c)%s \n" %tuple(multiple_choices)
                 #Formats the multiple choices with "a","b", and "c"
 
