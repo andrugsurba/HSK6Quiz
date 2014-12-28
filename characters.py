@@ -14,14 +14,16 @@ def main():
         print "Goodbye!"
         sys.exit()
         #Exits program
+        
+    prompt = "Choose a number of questions to display between 1 and 100. To exit, press 0. \n"    
 
     try:
-        num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
+        num_questions=int(raw_input(prompt))
         if num_questions == 0:
             exit_program()
     except ValueError:
         print "Please enter a valid number."
-        num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
+        num_questions=int(raw_input(prompt))
 
     count=0
     i=1
@@ -104,7 +106,7 @@ def main():
                 count = count + 1
 
             else:
-                num_questions=int(raw_input("Choose a number of questions to display between 1 and 100. To exit, press 0. \n"))
+                num_questions=int(raw_input(prompt))
         
         def quiz_result():
             total_score= (len(right_answers)/float(num_questions))*100
